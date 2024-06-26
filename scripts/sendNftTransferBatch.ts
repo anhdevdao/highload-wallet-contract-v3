@@ -14,7 +14,7 @@ export async function run(provider: NetworkProvider) {
   const keyPair = await mnemonicToWalletKey(mnemonic);
 
   // const highloadWalletV3Address = await promptAddress('Enter your highload-wallet-v3 address: ', provider.ui());
-  const highloadWalletV3Address = Address.parse("EQDYZAIgSnRPtqirqZTTIBFc3VYdzw4bVLRxKFJQmlJt5rOc");
+  const highloadWalletV3Address = Address.parse(process.env.HIGHLOAD_WALLET_V3_CONTRACT!);
   const highloadWalletV3 = provider.open(HighloadWalletV3.createFromAddress(highloadWalletV3Address));
 
   const curQuery = new HighloadQueryId();
